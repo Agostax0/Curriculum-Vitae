@@ -1,0 +1,16 @@
+name: Build LaTeX and deploy on GitHub Releases
+on:
+  push:
+    tags: '*'
+    paths-ignore:
+      - 'README.md'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  Setup-Compile-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: DanySK/compile-and-publish-all-latex@2.0.61
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
