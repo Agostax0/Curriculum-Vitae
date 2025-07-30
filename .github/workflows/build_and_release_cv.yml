@@ -1,10 +1,8 @@
 name: Build LaTeX and deploy on GitHub Releases
 on:
   push:
-    tags: '*'
-    paths-ignore:
-      - 'README.md'
-
+    branches:
+      - 'main'
 jobs:
   Setup-Compile-Deploy:
     runs-on: ubuntu-latest
